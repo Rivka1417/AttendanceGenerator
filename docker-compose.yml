@@ -1,0 +1,24 @@
+
+services:
+  attendance-generator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      secrets:
+        - netfree_ca
+
+    image: attendance-generator:latest
+    container_name: attendance-generator
+
+    ports:
+      - "8501:8501"
+
+    volumes:
+      - ./input:/app/input
+      - ./output:/app/output
+
+    restart: unless-stopped
+
+secrets:
+  netfree_ca:
+    file: ./netfree-ca-bundle.pem

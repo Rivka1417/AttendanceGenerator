@@ -1,0 +1,7 @@
+
+pdf2image==1.17.0
+pytesseract==0.3.13
+pydantic>=2,<3
+python-bidi>=0.6,<1
+reportlab>=4,<5
+streamlit>=1.40,<2
